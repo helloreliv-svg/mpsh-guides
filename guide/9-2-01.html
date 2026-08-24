@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>릴리브 강아지 러그 촬영 가이드</title>
+<meta property="og:title" content="릴리브 강아지 러그 콘텐츠 촬영 가이드">
+<meta property="og:description" content="말티푸타임 · 촬영 전 꼭 확인해주세요">
+<meta property="og:type" content="website">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+:root{
+  --accent:#8a6a4f; --hero:#a98b6d;
+  --bg:#faf7f2; --tint:#f2ebe2;
+  --ink:#2b2724; --sub:#7a7069; --line:#e6ded4; --card:#ffffff;
+  --warn:#c0392b; --warn-bg:#fdf2f0; --ok:#2f7d4f; --ok-bg:#eef7f1;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:15px; line-height:1.62; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:520px;margin:0 auto;background:var(--card);min-height:100vh;}
+
+/* 히어로 */
+.hero{background:var(--hero);color:#fff;padding:40px 24px 30px;text-align:center;position:relative;}
+.logo{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.92);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-weight:800;font-size:15px;letter-spacing:-.02em;}
+.hero h1{margin:0;font-size:26px;font-weight:800;line-height:1.32;letter-spacing:-.03em;}
+.hero .en{display:inline-block;margin-top:12px;padding:4px 12px;border-radius:20px;
+  background:rgba(0,0,0,.16);font-size:10.5px;letter-spacing:.14em;font-weight:600;}
+.specs{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
+.specs span{padding:6px 13px;border-radius:20px;background:rgba(0,0,0,.16);font-size:12px;font-weight:600;}
+
+/* 탭 */
+.tabs{display:flex;gap:7px;overflow-x:auto;padding:14px 16px;background:var(--card);
+  position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tabs button{flex:none;border:0;padding:9px 16px;border-radius:22px;background:var(--tint);
+  color:var(--sub);font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;}
+.tabs button[aria-selected="true"]{background:var(--accent);color:#fff;}
+.tabwrap{position:relative;}
+.tabwrap::after{content:"";position:absolute;right:0;top:0;bottom:1px;width:26px;pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,255,255,0),var(--card));}
+
+/* 섹션 */
+section{display:none;padding:26px 22px 34px;}
+section.on{display:block;}
+.eyebrow{font-size:10.5px;letter-spacing:.15em;font-weight:700;color:var(--sub);}
+h2{margin:5px 0 6px;font-size:22px;font-weight:800;letter-spacing:-.03em;position:relative;}
+h2 .no{position:absolute;right:0;top:-14px;font-size:46px;font-weight:800;color:var(--tint);letter-spacing:-.04em;}
+.lede{color:var(--sub);font-size:13.5px;margin:0 0 20px;}
+
+/* 일정 타임라인 */
+.tl{list-style:none;padding:0;margin:0 0 18px;}
+.tl li{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
+.tl li:last-child{border-bottom:0;}
+.tl .n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--tint);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800;margin-top:2px;}
+.tl .lb{flex:1;font-weight:700;font-size:14.5px;}
+.tl .lb em{display:block;font-style:normal;font-weight:400;font-size:12.5px;color:var(--sub);margin-top:2px;}
+.tl .dt{text-align:right;font-weight:800;font-size:14.5px;white-space:nowrap;}
+.tl .dt em{display:block;font-style:normal;font-weight:700;font-size:11.5px;margin-top:2px;}
+.tl li.due .dt{color:var(--accent);}
+.dday{color:var(--warn);}
+.dday.far{color:var(--sub);}
+
+/* 공통 블록 */
+.num{list-style:none;padding:0;margin:0;counter-reset:c;}
+.num li{display:flex;gap:12px;padding:11px 0;counter-increment:c;}
+.num li::before{content:counter(c);flex:none;width:23px;height:23px;border-radius:50%;
+  background:var(--tint);color:var(--accent);display:flex;align-items:center;justify-content:center;
+  font-size:11.5px;font-weight:800;margin-top:1px;}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.card{border:1px solid var(--line);border-radius:11px;padding:14px;background:var(--card);}
+.card b{display:block;font-size:14px;margin-bottom:4px;letter-spacing:-.02em;}
+.card span{font-size:12.5px;color:var(--sub);line-height:1.5;}
+.pick{border:1px solid var(--line);border-radius:12px;padding:15px 16px;margin-bottom:9px;background:var(--card);}
+.pick .tag{display:inline-block;font-size:11px;font-weight:800;color:var(--accent);
+  background:var(--tint);border-radius:6px;padding:3px 9px;margin-bottom:8px;}
+.pick p{margin:0;font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-.02em;}
+.note{font-size:12.5px;color:var(--sub);line-height:1.6;margin-top:14px;}
+.box{border-radius:12px;padding:15px 17px;margin:16px 0;}
+.box.tint{background:var(--tint);}
+.box.warn{background:var(--warn-bg);border:1px solid #f0cec8;}
+.box b{display:block;margin-bottom:6px;font-size:14px;}
+.box.warn b{color:var(--warn);}
+.box p{margin:0;font-size:13.5px;line-height:1.6;}
+.chk{list-style:none;padding:0;margin:0;}
+.chk li{display:flex;gap:10px;padding:11px 13px;border-radius:10px;margin-bottom:8px;font-size:13.8px;line-height:1.55;}
+.chk li::before{flex:none;font-weight:800;}
+.chk.yes li{background:var(--ok-bg);} .chk.yes li::before{content:"✓";color:var(--ok);}
+.chk.no  li{background:var(--warn-bg);} .chk.no li::before{content:"✕";color:var(--warn);}
+.chk.gray li{background:#f6f4f1;color:var(--sub);} .chk.gray li::before{content:"·";color:var(--sub);}
+h3{font-size:14.5px;font-weight:800;margin:22px 0 10px;}
+h3.red{color:var(--warn);}
+table{width:100%;border-collapse:collapse;}
+td{padding:12px 0;border-bottom:1px solid var(--line);font-size:13.8px;vertical-align:top;}
+td.k{width:96px;color:var(--sub);font-weight:600;}
+td.v{text-align:right;font-weight:700;}
+.linklist{list-style:none;padding:0;margin:0;}
+.linklist a{display:flex;justify-content:space-between;align-items:center;gap:10px;
+  border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin-bottom:8px;
+  text-decoration:none;color:var(--ink);font-weight:700;font-size:14px;}
+.linklist a span{color:var(--accent);font-size:12.5px;font-weight:700;}
+footer{background:var(--tint);text-align:center;padding:30px 22px 38px;}
+footer b{display:block;font-size:16px;font-weight:800;margin-bottom:5px;}
+footer p{margin:0;font-size:12.5px;color:var(--sub);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <div class="logo">reliv,</div>
+  <h1>릴리브 강아지 러그<br>콘텐츠 촬영 가이드</h1>
+  <div class="en">RELIV CONTENT GUIDE</div>
+  <div class="specs">
+    <span>MP4 (4K 또는 FHD)</span>
+    <span>9:16 세로 (1080x1920)</span>
+  </div>
+</div>
+
+<div class="tabwrap"><div class="tabs" role="tablist">
+  <button role="tab" aria-selected="true" data-t="s1">일정 &amp; 필독</button>
+  <button role="tab" aria-selected="false" data-t="s2">첫 3초</button>
+  <button role="tab" aria-selected="false" data-t="s3">제품정보</button>
+<button role="tab" aria-selected="false" data-t="s4">씬 예시</button>  <button role="tab" aria-selected="false" data-t="s5">유의사항</button>
+  <button role="tab" aria-selected="false" data-t="s6">제출</button>
+</div></div>
+
+<!-- 01 일정 & 필독 -->
+<section id="s1" class="on">
+  <div class="eyebrow">SCHEDULE</div>
+  <h2>내 일정<span class="no">01</span></h2>
+  <p class="lede" id="who">아래 일정은 <b>회원님 개인 일정</b>입니다.</p>
+  <ul class="tl" id="tl"></ul>
+  <div class="box tint" id="nosched" style="display:none">
+    <b>일정이 아직 안 들어왔어요</b>
+    <p>담당자에게 문의해주세요. 링크에 이름이 빠진 경우일 수 있습니다.</p>
+  </div>
+
+  <h3>촬영 전 필독</h3>
+  <ol class="num">
+<li>자막과 장면 연출은 가이드 범위 안에서 자유롭게 표현해주세요.</li><li>촬영 원본 파일을 전부 전달해주세요. GIF·다른 형식 변환 금지, B컷 포함.</li><li>목소리·얼굴 노출 등으로 원본 전달이 불가한 상황이 없도록 주의해주세요.</li><li>영상과 별도로 실사용 사진 5컷을 함께 촬영해주세요. 상세페이지·리뷰에 쓰입니다.</li>  </ol>
+  <div class="box warn">
+    <b>이건 꼭 지켜주세요</b>
+    <p>촬영 원본 파일을 전부 보내주셔야 합니다. GIF·다른 형식으로 변환하면 광고 소재로 쓸 수 없어
+    재촬영을 부탁드리게 됩니다. B컷도 함께 보내주세요.</p>
+  </div>
+  <p class="note">시청자에게 자연스럽게 다가가도록, 평소 채널 고유의 릴스 무드와 편집 스타일을
+  최대한 살려서 촬영·편집해주세요. 구성 순서와 장면은 자유입니다.</p>
+</section>
+
+<!-- 02 첫 3초 -->
+<section id="s2">
+  <div class="eyebrow">HOOK</div>
+  <h2>첫 3초<span class="no">02</span></h2>
+  <p class="lede">첫 1~2초 안에 시청자를 멈춰 세우는 게 핵심입니다. 아래 중 하나를 골라 시작해주세요.</p>
+  <div class="pick"><span class="tag">A안</span><p>말티푸타임</p></div>
+  <div class="pick"><span class="tag">B안</span><p>17만장 판매</p></div>
+  <div class="pick"><span class="tag">C안</span><p>후기가 증명하는</p></div>
+  <p class="note">셋 중 아무거나 고르시면 되고, 본인 말투로 바꾸셔도 됩니다.
+  제품명이나 기능으로 시작하지 마시고, 보시는 분의 고민이나 궁금증을 건드리는 문장으로 열어주세요.</p>
+
+  <div class="box tint">
+    <b>우리 아이 얘기를 꼭 넣어주세요</b>
+    <p>가이드대로만 만든 영상은 다들 비슷해서 반응이 잘 안 옵니다.
+    가이드에 없는 상황일수록 좋습니다.</p>
+    <ul class="chk gray" style="margin-top:11px">
+<li>"우리 애는 소파를 못 내려와서 늘 안아 내렸어요"</li><li>"노견이라 뛰지는 않는데 일어설 때마다 미끄러져요"</li><li>"미끄러워서 발톱이 갈리는 게 걱정이었어요"</li>    </ul>
+    <p style="margin-top:10px;font-size:12.5px;color:var(--sub)">
+    예시일 뿐이니 그대로 쓰지 마시고, 실제로 겪으신 걸 그대로 이야기해주세요.
+    <b>어떤 훅을 고르셨는지와 이 한 줄을 촬영 전에 담당자에게 알려주시면</b> 수정 요청이 크게 줄어듭니다.</p>
+  </div>
+</section>
+
+<!-- 03 제품정보 -->
+<section id="s3">
+  <div class="eyebrow">REFERENCE ONLY</div>
+  <h2>제품이 가진 것<span class="no">03</span></h2>
+  <p class="lede">이해를 돕기 위한 페이지입니다. 아래 표현을 그대로 읽지 마세요.</p>
+  <div class="cards">
+<div class="card"><b>착지가 안정적인 3중 구조</b><span>표면 패턴 + 논슬립 + 쿠션폼으로 발이 밀리지 않음</span></div><div class="card"><b>고밀도 원단 & 내구성</b><span>높은 원단 밀도로 발수 성능 우수, 먼지가 잘 안 박힘</span></div><div class="card"><b>세탁기 통세탁 가능</b><span>물세탁은 물론 세탁기 사용 가능</span></div><div class="card"><b>쉬운 청소기 사용</b><span>청소기에 러그가 딸려 올라가지 않음</span></div><div class="card"><b>안전 인증 완료</b><span>반려동물 품질 안전 인증, 사람과 동물 모두 안전</span></div><div class="card"><b>인테리어 조화</b><span>어떤 공간에도 잘 어울리는 모던한 디자인</span></div>  </div>
+  <p class="note">전부 넣지 마시고, 직접 써보시고 제일 크게 느껴진 것 1~2개만 골라
+  느낀 그대로 풀어주세요. 기능을 나열하면 광고처럼 읽혀서 오히려 반응이 안 좋습니다.</p>
+</section>
+
+<!-- 04 씬 예시 -->
+<section id="s4">
+  <div class="eyebrow">REFERENCE</div>
+  <h2>씬 예시<span class="no">04</span></h2>
+  <p class="lede">이대로 찍지 않으셔도 됩니다. 어떤 그림이 필요한지 보여드리는 참고용입니다.</p>
+  <ol class="num">
+<li>씬예시</li>  </ol>
+  <p class="note">순서를 지키실 필요도, 전부 담으실 필요도 없습니다.
+  어울리는 것만 골라 본인 구성으로 만들어주세요.</p>
+</section>
+
+<!-- 05 유의사항 -->
+<section id="s5">
+  <div class="eyebrow">CAUTION</div>
+  <h2>지켜주실 것<span class="no">05</span></h2>
+  <p class="lede">아래만 지켜주시면 나머지는 전부 자유입니다.</p>
+
+  <h3>꼭 넣어주세요</h3>
+  <ul class="chk yes"><li>맨바닥일 때와 러그 위일 때가 눈으로 비교되는 컷 — 동작은 뭐든 상관없습니다 (걷기·앉았다 일어서기·장난감 물어오기 다 됩니다)</li><li>강아지가 러그 위에서 움직이는 모습 — 가만히 있는 컷만으로는 차이가 안 보입니다</li><li>러그와 거실이 함께 보이는 넓은 구도 1컷</li></ul>
+
+  <div class="box warn"><b>필수 표기</b><p>생활방수 장면을 넣으실 경우 상단에 작게 — "생활방수는 오염물의 흡수를 지연시킬 뿐, 완벽히 방수되는 것은 아니니 유의해주세요"</p></div>
+
+  <h3 class="red">이러면 재촬영을 부탁드려야 합니다</h3>
+  <ul class="chk no"><li>편집에 쓴 원본 파일 미전달 (GIF·변환본만 오면 광고 소재로 쓸 수가 없습니다)</li><li>타 브랜드 로고가 그대로 노출</li><li>다른 협찬 광고를 그대로 따라 만든 구성</li><li>"슬개골 탈구 예방", "관절 보호" 같은 의학적 효능 단정 표현</li></ul>
+
+  <h3>이러면 수정을 요청드립니다</h3>
+  <ul class="chk gray"><li>논슬립을 "미끄럼 방지"로 표기 — "러그 밀림 방지"로 써주세요</li><li>첫 3초를 거실 전경 고정샷이나 강아지 정면 클로즈업으로 시작 (기존 소재와 화면이 겹칩니다)</li><li>생활방수 장면에 주의 자막 누락</li><li>언박싱·택배 개봉 장면 위주 구성</li><li>"무조건 사세요" 같은 강매형 광고 톤</li><li>제품 스펙을 기계적으로 나열하는 설명 (직접 써보고 느낀 걸로 풀어주세요)</li></ul>
+
+  <h3>편집 &amp; 자막 팁</h3>
+  <ul class="chk gray">
+    <li>영상 길이 35~40초 내외</li>
+    <li>자막은 한 화면 2줄 이내, 폰트 그림자나 자막바로 가독성 확보</li>
+    <li>제품과 공간이 함께 보이는 넓은 구도를 충분히 확보</li>
+  </ul>
+</section>
+
+<!-- 06 제출 -->
+<section id="s6">
+  <div class="eyebrow">SUBMIT</div>
+  <h2>제출 방법<span class="no">06</span></h2>
+  <table>
+    <tr><td class="k">보내실 곳</td><td class="v">hello@reliv.co.kr</td></tr>
+    <tr><td class="k">메일 제목</td><td class="v" id="mailsub">[릴리브] 콘텐츠 촬영본 전달_OOO(인플루언서명)</td></tr>
+  </table>
+  <h3>첨부 4종</h3>
+  <ul class="chk gray"><li>편집에 사용한 원본 파일 전체 (B컷 포함, GIF·다른 형식으로 변환 금지)</li><li>편집본 영상</li><li>클린본 (자막·BGM 없는 파일)</li><li>실사용 사진 5컷</li></ul>
+  <div class="box tint">
+    <b>업로드 후</b>
+    <p>파트너십 광고 코드를 함께 보내주셔야 합니다. 이게 없으면 광고 소재로 쓸 수 없습니다.</p>
+  </div>
+  <p class="note">전달해주신 영상·사진 소스는 2차 가공 후 상세페이지·광고영상 제작 등에 활용될 수 있습니다.</p>
+</section>
+
+<footer>
+  <b>좋은 장면, 함께 만들어요.</b>
+  <p>촬영 중 궁금한 점은 언제든 담당자에게 문의해주세요.</p>
+</footer>
+</div>
+
+<script>
+// 인플루언서별 일정 — 회차 확정자만 들어간다. 다른 회차·다른 브랜드는 포함하지 않는다.
+var PEOPLE = {};
+var STEPS = [
+  {k:"ship",   lb:"제품 수령 (예상)", sub:"배송 상황에 따라 하루 이틀 차이가 납니다"},
+  {k:"shoot",  lb:"촬영 (권장)",    sub:"이 무렵이면 일정이 편합니다"},
+  {k:"draft",  lb:"편집본 전달",   sub:"업로드 전 검토합니다", due:true},
+  {k:"upload", lb:"최종 업로드",   sub:"파트너십 광고 코드 함께", due:true}
+];
+var DAY = ["일","월","화","수","목","금","토"];
+
+function q(n){ var m = new RegExp("[?&]"+n+"=([^&]+)").exec(location.search); return m ? decodeURIComponent(m[1]) : ""; }
+function fmt(iso){
+  var d = new Date(iso + "T00:00:00");
+  return (d.getMonth()+1) + "월 " + d.getDate() + "일 (" + DAY[d.getDay()] + ")";
+}
+function dday(iso){
+  var t = new Date(); t.setHours(0,0,0,0);
+  var d = new Date(iso + "T00:00:00");
+  var n = Math.round((d - t) / 86400000);
+  if (n === 0)  return {s:"오늘",   near:true};
+  if (n < 0)    return {s:"지남",   near:true};
+  return {s:"D-" + n, near:n <= 3};
+}
+
+(function(){
+  var me = PEOPLE[q("i")];
+  var tl = document.getElementById("tl");
+  if (!me){
+    document.getElementById("nosched").style.display = "block";
+    document.getElementById("who").textContent = "아래는 이번 회차 공통 안내입니다.";
+    tl.style.display = "none";
+    return;
+  }
+  document.getElementById("who").innerHTML =
+    "<b>" + me.alias + "</b>님 일정입니다. 다른 분과 날짜가 다르니 이 페이지 기준으로 봐주세요.";
+  var sub = document.getElementById("mailsub");
+  if (sub) sub.textContent = sub.textContent.replace("OOO(인플루언서명)", me.alias);
+
+  STEPS.forEach(function(s, i){
+    if (!me[s.k]) return;
+    var d = dday(me[s.k]);
+    var li = document.createElement("li");
+    if (s.due) li.className = "due";
+    li.innerHTML =
+      '<span class="n">' + (i+1) + '</span>' +
+      '<span class="lb">' + s.lb + '<em>' + s.sub + '</em></span>' +
+      '<span class="dt">' + fmt(me[s.k]) +
+        '<em class="dday' + (d.near ? "" : " far") + '">' + d.s + '</em></span>';
+    tl.appendChild(li);
+  });
+})();
+
+// 탭
+document.querySelectorAll('.tabs button').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.tabs button').forEach(function(x){ x.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('section').forEach(function(s){ s.classList.remove('on'); });
+    b.setAttribute('aria-selected','true');
+    document.getElementById(b.dataset.t).classList.add('on');
+    window.scrollTo({top:0, behavior:'instant'});
+  });
+});
+</script>
+</body>
+</html>
